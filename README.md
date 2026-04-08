@@ -1,6 +1,12 @@
 # CSE598
 - run `evaluation_setup.sh` to create venv and `tesse_odom.tum` ground-truth file
 - run `evaluation.sh`
+- ***If your project structure is different(supposed to be different), then you should provide 5 options parameters:***
+    - `--hydra-ws-dir`
+    - `--tum-dir`
+    - `--venv-dir`
+    - `--backend-dir`
+    - `--gt-bag-dir`
 - Currently, the default structure looks like this:
 
 ```bash
