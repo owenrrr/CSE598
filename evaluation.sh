@@ -20,7 +20,7 @@ Options:
                         default: /home/abcd0/.hydra/uhumans2/backend
 
   --gt-bag-dir PATH     ROS2 bag folder for GT
-                        default: <hydra_ws_dir>/src/hydra_ros/datasets/uhumans2/office_ros2
+                        default: /home/abcd0/datasets/uhumans2/office_ros2
 
   --gt-topic TOPIC      GT topic in rosbag
                         default: /tesse/odom
@@ -42,7 +42,7 @@ HYDRA_WS_DIR="/home/abcd0/hydra_ws"
 TUM_DIR=""
 VENV_INPUT=""
 BACKEND_DIR="/home/abcd0/.hydra/uhumans2/backend"
-GT_BAG_DIR=""
+GT_BAG_DIR="/home/abcd0/datasets/uhumans2/office_ros2"
 GT_TOPIC="/tesse/odom"
 GT_NAME="tesse_odom.tum"
 EST_NAME="hydra_est.tum"
@@ -112,10 +112,6 @@ fi
 
 if [[ -z "$VENV_INPUT" ]]; then
     VENV_INPUT="$HYDRA_WS_DIR/venv"
-fi
-
-if [[ -z "$GT_BAG_DIR" ]]; then
-    GT_BAG_DIR="$HYDRA_WS_DIR/src/hydra_ros/datasets/uhumans2/office_ros2"
 fi
 
 if [[ "$(basename "$VENV_INPUT")" == "evo_venv" ]]; then
