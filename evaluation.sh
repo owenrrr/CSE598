@@ -7,38 +7,55 @@ Usage:
   ./evaluation.sh [options]
 
 Options:
-  --hydra-ws-dir PATH   Hydra workspace folder
-                        default: /home/abcd0/hydra_ws
+  --hydra-ws-dir PATH            Hydra workspace folder
+                                 default: /home/abcd0/hydra_ws
 
-  --tum-dir PATH        tum folder
-                        default: /home/abcd0/tum
+  --hydra-repo-dir PATH          Hydra repo folder
+                                 default: auto-detect from:
+                                          /home/abcd0/hydra_ws/src/hydra
+                                          /home/abcd0/hydra_ws/src/Hydra
 
-  --venv-dir PATH       venv folder OR evo_venv folder
-                        default: /home/abcd0/venvs/evo_eval
+  --tum-dir PATH                 tum folder
+                                 default: /home/abcd0/tum
 
-  --backend-dir PATH    backend folder
-                        default: /home/abcd0/.hydra/uhumans2/backend
+  --venv-dir PATH                venv folder
+                                 default: /home/abcd0/venvs/evo_eval
 
-  --gt-bag-dir PATH     ROS2 bag folder for GT
-                        default: /home/abcd0/datasets/uhumans2/office_ros2
+  --backend-dir PATH             backend folder
+                                 default: /home/abcd0/.hydra/uhumans2/backend
 
-  --gt-topic TOPIC      GT topic in rosbag
-                        default: /tesse/odom
+  --gt-bag-dir PATH              ROS2 bag folder for GT
+                                 default: /home/abcd0/datasets/uhumans2/office_ros2
 
-  --gt-name FILENAME    GT tum filename
-                        default: tesse_odom.tum
+  --gt-topic TOPIC               GT topic in rosbag
+                                 default: /tesse/odom
 
-  --est-name FILENAME   estimated tum filename
-                        default: hydra_est.tum
+  --gt-name FILENAME             GT tum filename
+                                 default: tesse_odom.tum
 
-  --force-reinstall     pass through to evaluation_setup.sh
-  --force-regenerate-gt pass through to evaluation_setup.sh
-  -h, --help            show this help
+  --est-name FILENAME            estimated tum filename
+                                 default: hydra_est.tum
+
+  --official-eval-results-dir P  results dir for official hydra-eval
+                                 default: <backend-dir>
+
+  --skip-official-eval           skip running official hydra-eval
+  --force-reinstall              pass through to evaluation_setup.sh
+  --force-regenerate-gt          pass through to evaluation_setup.sh
+  -h, --help                     show this help
 EOF
+}
+
+abspath() {
+    python3 - "$1" <<'PY'
+import os, sys
+print(os.path.abspath(sys.argv[1]))
+PY
 }
 
 # ---------------- defaults ----------------
 HYDRA_WS_DIR="/home/abcd0/hydra_ws"
+HYDRA_REPO_DIR=""
 TUM_DIR="/home/abcd0/tum"
 VENV_DIR="/home/abcd0/venvs/evo_eval"
 BACKEND_DIR="/home/abcd0/.hydra/uhumans2/backend"
@@ -46,6 +63,8 @@ GT_BAG_DIR="/home/abcd0/datasets/uhumans2/office_ros2"
 GT_TOPIC="/tesse/odom"
 GT_NAME="tesse_odom.tum"
 EST_NAME="hydra_est.tum"
+OFFICIAL_EVAL_RESULTS_DIR=""
+RUN_OFFICIAL_EVAL=1
 
 FORCE_REINSTALL=0
 FORCE_REGENERATE_GT=0
@@ -55,6 +74,10 @@ while [[ $# -gt 0 ]]; do
     case "$1" in
         --hydra-ws-dir)
             HYDRA_WS_DIR="$2"
+            shift 2
+            ;;
+        --hydra-repo-dir)
+            HYDRA_REPO_DIR="$2"
             shift 2
             ;;
         --tum-dir)
@@ -85,6 +108,14 @@ while [[ $# -gt 0 ]]; do
             EST_NAME="$2"
             shift 2
             ;;
+        --official-eval-results-dir)
+            OFFICIAL_EVAL_RESULTS_DIR="$2"
+            shift 2
+            ;;
+        --skip-official-eval)
+            RUN_OFFICIAL_EVAL=0
+            shift
+            ;;
         --force-reinstall)
             FORCE_REINSTALL=1
             shift
@@ -106,6 +137,28 @@ while [[ $# -gt 0 ]]; do
 done
 
 # ---------------- resolve paths ----------------
+HYDRA_WS_DIR="$(abspath "$HYDRA_WS_DIR")"
+TUM_DIR="$(abspath "$TUM_DIR")"
+VENV_DIR="$(abspath "$VENV_DIR")"
+BACKEND_DIR="$(abspath "$BACKEND_DIR")"
+GT_BAG_DIR="$(abspath "$GT_BAG_DIR")"
+
+if [[ -z "$HYDRA_REPO_DIR" ]]; then
+    if [[ -d "$HYDRA_WS_DIR/src/hydra" ]]; then
+        HYDRA_REPO_DIR="$HYDRA_WS_DIR/src/hydra"
+    elif [[ -d "$HYDRA_WS_DIR/src/Hydra" ]]; then
+        HYDRA_REPO_DIR="$HYDRA_WS_DIR/src/Hydra"
+    else
+        HYDRA_REPO_DIR="$HYDRA_WS_DIR/src/hydra"
+    fi
+fi
+HYDRA_REPO_DIR="$(abspath "$HYDRA_REPO_DIR")"
+
+if [[ -z "$OFFICIAL_EVAL_RESULTS_DIR" ]]; then
+    OFFICIAL_EVAL_RESULTS_DIR="$BACKEND_DIR"
+fi
+OFFICIAL_EVAL_RESULTS_DIR="$(abspath "$OFFICIAL_EVAL_RESULTS_DIR")"
+
 GT_TUM_FILE="$TUM_DIR/$GT_NAME"
 HYDRA_TUM_FILE="$TUM_DIR/$EST_NAME"
 TRAJ_CSV="$BACKEND_DIR/trajectory.csv"
@@ -113,7 +166,6 @@ TRAJ_CSV="$BACKEND_DIR/trajectory.csv"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SETUP_SCRIPT="$SCRIPT_DIR/evaluation_setup.sh"
 
-# fallback for old typo filename
 if [[ ! -f "$SETUP_SCRIPT" && -f "$SCRIPT_DIR/evaluatoin_setup.sh" ]]; then
     SETUP_SCRIPT="$SCRIPT_DIR/evaluatoin_setup.sh"
 fi
@@ -121,19 +173,22 @@ fi
 # ---------------- print config ----------------
 echo "=========================================="
 echo "evaluation.sh"
-echo "hydra_ws_dir : $HYDRA_WS_DIR"
-echo "tum_dir      : $TUM_DIR"
-echo "venv_dir     : $VENV_DIR"
-echo "backend_dir  : $BACKEND_DIR"
-echo "gt_bag_dir   : $GT_BAG_DIR"
-echo "gt_topic     : $GT_TOPIC"
-echo "gt_tum_file  : $GT_TUM_FILE"
-echo "hydra_tum    : $HYDRA_TUM_FILE"
+echo "hydra_ws_dir           : $HYDRA_WS_DIR"
+echo "hydra_repo_dir         : $HYDRA_REPO_DIR"
+echo "tum_dir                : $TUM_DIR"
+echo "venv_dir               : $VENV_DIR"
+echo "backend_dir            : $BACKEND_DIR"
+echo "gt_bag_dir             : $GT_BAG_DIR"
+echo "gt_topic               : $GT_TOPIC"
+echo "gt_tum_file            : $GT_TUM_FILE"
+echo "hydra_tum              : $HYDRA_TUM_FILE"
+echo "official_eval_results  : $OFFICIAL_EVAL_RESULTS_DIR"
 echo "=========================================="
 
 # ---------------- setup args ----------------
 SETUP_ARGS=(
     --hydra-ws-dir "$HYDRA_WS_DIR"
+    --hydra-repo-dir "$HYDRA_REPO_DIR"
     --tum-dir "$TUM_DIR"
     --venv-dir "$VENV_DIR"
     --backend-dir "$BACKEND_DIR"
@@ -141,6 +196,10 @@ SETUP_ARGS=(
     --gt-topic "$GT_TOPIC"
     --gt-name "$GT_NAME"
 )
+
+if [[ $RUN_OFFICIAL_EVAL -eq 0 ]]; then
+    SETUP_ARGS+=(--skip-official-eval)
+fi
 
 if [[ $FORCE_REINSTALL -eq 1 ]]; then
     SETUP_ARGS+=(--force-reinstall)
@@ -158,8 +217,14 @@ fi
 
 NEED_SETUP=0
 
-if [[ ! -x "$VENV_DIR/bin/evo_ape" || ! -x "$VENV_DIR/bin/evo_rpe" ]]; then
+if [[ ! -x "$VENV_DIR/bin/evo_ape" || ! -x "$VENV_DIR/bin/evo_rpe" || ! -x "$VENV_DIR/bin/evo_traj" ]]; then
     NEED_SETUP=1
+fi
+
+if [[ $RUN_OFFICIAL_EVAL -eq 1 ]]; then
+    if [[ ! -d "$HYDRA_REPO_DIR/eval/python/hydra_eval" ]]; then
+        NEED_SETUP=1
+    fi
 fi
 
 if [[ ! -f "$GT_TUM_FILE" ]]; then
@@ -268,6 +333,25 @@ echo "=== Running APE ==="
 echo
 echo "=== Running RPE ==="
 "$VENV_DIR/bin/evo_rpe" tum "$GT_TUM_FILE" "$HYDRA_TUM_FILE" -a --delta 1 --delta_unit m --pose_relation trans_part -v
+
+# ---------------- run official Hydra eval ----------------
+if [[ $RUN_OFFICIAL_EVAL -eq 1 ]]; then
+    echo
+    echo "=== Running official Hydra timing eval ==="
+
+    HYDRA_EVAL_SRC_DIR="$HYDRA_REPO_DIR/eval/python"
+
+    if [[ ! -d "$HYDRA_EVAL_SRC_DIR/hydra_eval" ]]; then
+        echo "Warning: Hydra eval source dir not found: $HYDRA_EVAL_SRC_DIR/hydra_eval"
+        echo "Skipping official eval."
+    elif [[ ! -d "$OFFICIAL_EVAL_RESULTS_DIR" ]]; then
+        echo "Warning: official eval results dir not found: $OFFICIAL_EVAL_RESULTS_DIR"
+        echo "Skipping official eval."
+    else
+        PYTHONPATH="$HYDRA_EVAL_SRC_DIR${PYTHONPATH:+:$PYTHONPATH}" \
+            "$VENV_DIR/bin/python" -m hydra_eval timing show "$OFFICIAL_EVAL_RESULTS_DIR" || true
+    fi
+fi
 
 echo
 echo "Evaluation finished."
