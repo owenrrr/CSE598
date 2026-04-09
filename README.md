@@ -1,7 +1,7 @@
 # CSE598
 - run `evaluation_setup.sh` to create venv and `tesse_odom.tum` ground-truth file
 - run `evaluation.sh`
-- ***If your project structure is different(supposed to be different), then you should provide 5 options parameters:***
+- **If your project structure is different(supposed to be different), then you should provide 5 options parameters:**
     - `--hydra-ws-dir`
     - `--tum-dir`
     - `--venv-dir`
@@ -20,9 +20,9 @@
             - tesse_odm.tum 
             - hydra_est.tum 
         - venv 
-            - evo_venv 
-        evaluation.sh 
-        evaluatoin_setup.sh 
+            - evo_eval 
+    - evaluation.sh 
+    - evaluatoin_setup.sh 
     - .hydra 
         - uhumans2 
             - backend 

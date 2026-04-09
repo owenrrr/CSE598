@@ -11,10 +11,10 @@ Options:
                         default: /home/abcd0/hydra_ws
 
   --tum-dir PATH        tum folder
-                        default: <hydra_ws_dir>/tum
+                        default: /home/abcd0/tum
 
   --venv-dir PATH       venv folder OR evo_venv folder
-                        default: <hydra_ws_dir>/venv
+                        default: /home/abcd0/venvs/evo_eval
 
   --backend-dir PATH    backend folder
                         default: /home/abcd0/.hydra/uhumans2/backend
@@ -39,8 +39,8 @@ EOF
 
 # ---------------- defaults ----------------
 HYDRA_WS_DIR="/home/abcd0/hydra_ws"
-TUM_DIR=""
-VENV_INPUT=""
+TUM_DIR="/home/abcd0/tum"
+VENV_DIR="/home/abcd0/venvs/evo_eval"
 BACKEND_DIR="/home/abcd0/.hydra/uhumans2/backend"
 GT_BAG_DIR="/home/abcd0/datasets/uhumans2/office_ros2"
 GT_TOPIC="/tesse/odom"
@@ -62,7 +62,7 @@ while [[ $# -gt 0 ]]; do
             shift 2
             ;;
         --venv-dir)
-            VENV_INPUT="$2"
+            VENV_DIR="$2"
             shift 2
             ;;
         --backend-dir)
@@ -106,20 +106,6 @@ while [[ $# -gt 0 ]]; do
 done
 
 # ---------------- resolve paths ----------------
-if [[ -z "$TUM_DIR" ]]; then
-    TUM_DIR="$HYDRA_WS_DIR/tum"
-fi
-
-if [[ -z "$VENV_INPUT" ]]; then
-    VENV_INPUT="$HYDRA_WS_DIR/venv"
-fi
-
-if [[ "$(basename "$VENV_INPUT")" == "evo_venv" ]]; then
-    VENV_DIR="$VENV_INPUT"
-else
-    VENV_DIR="$VENV_INPUT/evo_venv"
-fi
-
 GT_TUM_FILE="$TUM_DIR/$GT_NAME"
 HYDRA_TUM_FILE="$TUM_DIR/$EST_NAME"
 TRAJ_CSV="$BACKEND_DIR/trajectory.csv"
@@ -127,11 +113,12 @@ TRAJ_CSV="$BACKEND_DIR/trajectory.csv"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 SETUP_SCRIPT="$SCRIPT_DIR/evaluation_setup.sh"
 
-# 如果你還保留舊的拼錯檔名 evaluatoin_setup.sh，也支援 fallback
+# fallback for old typo filename
 if [[ ! -f "$SETUP_SCRIPT" && -f "$SCRIPT_DIR/evaluatoin_setup.sh" ]]; then
     SETUP_SCRIPT="$SCRIPT_DIR/evaluatoin_setup.sh"
 fi
 
+# ---------------- print config ----------------
 echo "=========================================="
 echo "evaluation.sh"
 echo "hydra_ws_dir : $HYDRA_WS_DIR"
@@ -144,11 +131,11 @@ echo "gt_tum_file  : $GT_TUM_FILE"
 echo "hydra_tum    : $HYDRA_TUM_FILE"
 echo "=========================================="
 
-# ---------------- setup ----------------
+# ---------------- setup args ----------------
 SETUP_ARGS=(
     --hydra-ws-dir "$HYDRA_WS_DIR"
     --tum-dir "$TUM_DIR"
-    --venv-dir "$VENV_INPUT"
+    --venv-dir "$VENV_DIR"
     --backend-dir "$BACKEND_DIR"
     --gt-bag-dir "$GT_BAG_DIR"
     --gt-topic "$GT_TOPIC"
@@ -163,12 +150,32 @@ if [[ $FORCE_REGENERATE_GT -eq 1 ]]; then
     SETUP_ARGS+=(--force-regenerate-gt)
 fi
 
+# ---------------- maybe run setup ----------------
 if [[ ! -f "$SETUP_SCRIPT" ]]; then
     echo "Error: setup script not found: $SETUP_SCRIPT"
     exit 1
 fi
 
-bash "$SETUP_SCRIPT" "${SETUP_ARGS[@]}"
+NEED_SETUP=0
+
+if [[ ! -x "$VENV_DIR/bin/evo_ape" || ! -x "$VENV_DIR/bin/evo_rpe" ]]; then
+    NEED_SETUP=1
+fi
+
+if [[ ! -f "$GT_TUM_FILE" ]]; then
+    NEED_SETUP=1
+fi
+
+if [[ $FORCE_REINSTALL -eq 1 || $FORCE_REGENERATE_GT -eq 1 ]]; then
+    NEED_SETUP=1
+fi
+
+if [[ $NEED_SETUP -eq 1 ]]; then
+    echo "Running evaluation_setup.sh ..."
+    bash "$SETUP_SCRIPT" "${SETUP_ARGS[@]}"
+else
+    echo "Setup already satisfied. Skipping evaluation_setup.sh"
+fi
 
 # ---------------- checks ----------------
 if [[ ! -d "$BACKEND_DIR" ]]; then
@@ -194,7 +201,7 @@ fi
 mkdir -p "$TUM_DIR"
 
 # ---------------- print final active node counts ----------------
-python3 - <<PY
+"$VENV_DIR/bin/python" - <<PY
 import os
 import pandas as pd
 
@@ -225,7 +232,7 @@ for layer in [2, 3, 4, 5]:
 PY
 
 # ---------------- convert hydra trajectory to TUM ----------------
-python3 - <<PY
+"$VENV_DIR/bin/python" - <<PY
 import pandas as pd
 
 traj_csv = r"${TRAJ_CSV}"
