@@ -221,10 +221,8 @@ if [[ ! -x "$VENV_DIR/bin/evo_ape" || ! -x "$VENV_DIR/bin/evo_rpe" || ! -x "$VEN
     NEED_SETUP=1
 fi
 
-if [[ $RUN_OFFICIAL_EVAL -eq 1 ]]; then
-    if [[ ! -d "$HYDRA_REPO_DIR/eval/python/hydra_eval" ]]; then
-        NEED_SETUP=1
-    fi
+if [[ $RUN_OFFICIAL_EVAL -eq 1 && ! -x "$VENV_DIR/bin/hydra-eval" ]]; then
+    NEED_SETUP=1
 fi
 
 if [[ ! -f "$GT_TUM_FILE" ]]; then

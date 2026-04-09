@@ -179,6 +179,7 @@ if [[ $FORCE_REINSTALL -eq 1 || ! -x "$VENV_DIR/bin/evo_traj" || ! -x "$VENV_DIR
     echo "[2/4] Installing/updating evo..."
     "$VENV_DIR/bin/python" -m pip install -U pip setuptools wheel
     "$VENV_DIR/bin/python" -m pip install -U evo
+    "$VENV_DIR/bin/python" -m pip install -U pyyaml
 else
     echo "[2/4] evo already available, skipping install."
 fi
