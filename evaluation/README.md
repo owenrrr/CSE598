@@ -72,3 +72,16 @@ Options:
 
 ## Object Semantic Evaluation
 - pip install PyYAML
+
+## Visual Inspection
+You can do it either real-time or offline. I will prefer offline and here's the command to open the scene graph using RViz offline method.
+
+```bash
+cd ~/.hydra/uhumans2/backend
+# this will generate without mesh
+ros2 launch hydra_visualizer static_visualizer.launch.yaml scene_graph:=dsg.json
+# this will generate with mesh
+ros2 launch hydra_visualizer static_visualizer.launch.yaml scene_graph:=dsg_with_mesh.json
+```
+
+After opening RViz, open config and import cam1.rviz. You will get siz cams on the View panel (If you don't have View panel on your right side, just click it on the top tab). Thus, we can use these siz cams to complete visual inspection under different optimizations.
