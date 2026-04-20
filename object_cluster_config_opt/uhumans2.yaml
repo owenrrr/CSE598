@@ -21,29 +21,29 @@ frontend:
     min_cluster_size: 40
     cluster_tolerance: 0.25
     max_cluster_size: 100000
-    bounding_box_type: RAABB
+    bounding_box_type: AABB
 
     per_label_cluster_tolerance:
-      5: 0.28
+      5: 0.30
       6: 0.35
       7: 0.40
       9: 0.40
-      10: 0.18
+      10: 0.24
       12: 0.20
       13: 0.20
       16: 0.40
-      18: 0.22
+      18: 0.28
 
     per_label_min_cluster_size:
       5: 45
       6: 70
       7: 90
       9: 120
-      10: 18
+      10: 30
       12: 25
       13: 20
       16: 140
-      18: 20
+      18: 30
 
     per_label_max_cluster_size:
       5: 60000
