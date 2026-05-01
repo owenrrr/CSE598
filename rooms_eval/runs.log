@@ -1,0 +1,908 @@
+========== run_01 ==========
+[INFO] Started Hydra pid=1958127
+[INFO] Started bag play pid=1958264
+[INFO] Bag play finished rc=0
+[INFO] Stopping Hydra...
+[INFO] Running evaluation...
+Evaluation done.
+  trajectory_rows: 609
+  ape_rmse: 3.6e-05
+  rpe_rmse: 4.9e-05
+  rooms_final: 6
+Run summary:
+  trajectory_rows: 609
+  ape_rmse: 3.6e-05
+  ape_mean: 3.1e-05
+  rpe_rmse: 4.9e-05
+  rpe_mean: 4.2e-05
+  layer_2_final_nodes_active: 110
+  layer_3_final_nodes_active: 1142
+  layer_4_final_nodes_active: 6
+  layer_5_final_nodes_active: 1
+  rooms_final: 6
+  layer_names: {'2': 'Objects', '3': 'Places', '4': 'Rooms', '5': 'Buildings'}
+[PLATEAU] Summary:
+  selected_components: 7
+  threshold: 0.023314
+  max_lifetime: 0.155426
+  ranked lifetimes:
+    comp=3, lifetime=0.155426
+    comp=7, lifetime=0.146386
+    comp=4, lifetime=0.103512
+    comp=5, lifetime=0.069805
+    comp=7, lifetime=0.063281
+    comp=7, lifetime=0.033809
+    comp=6, lifetime=0.022087
+    comp=8, lifetime=0.020204
+    comp=6, lifetime=0.019803
+    comp=7, lifetime=0.000000
+    comp=6, lifetime=0.000000
+    comp=8, lifetime=0.000000
+[INFO] Cleaning backend directory...
+
+========== run_02 ==========
+[INFO] Started Hydra pid=2065179
+[INFO] Started bag play pid=2065317
+[INFO] Bag play finished rc=0
+[INFO] Stopping Hydra...
+[INFO] Running evaluation...
+Evaluation done.
+  trajectory_rows: 605
+  ape_rmse: 3.6e-05
+  rpe_rmse: 5.4e-05
+  rooms_final: 6
+Run summary:
+  trajectory_rows: 605
+  ape_rmse: 3.6e-05
+  ape_mean: 3.2e-05
+  rpe_rmse: 5.4e-05
+  rpe_mean: 4.6e-05
+  layer_2_final_nodes_active: 103
+  layer_3_final_nodes_active: 1107
+  layer_4_final_nodes_active: 6
+  layer_5_final_nodes_active: 1
+  rooms_final: 6
+  layer_names: {'2': 'Objects', '3': 'Places', '4': 'Rooms', '5': 'Buildings'}
+[PLATEAU] Summary:
+  selected_components: 6
+  threshold: 0.024194
+  max_lifetime: 0.161296
+  ranked lifetimes:
+    comp=3, lifetime=0.161296
+    comp=6, lifetime=0.128220
+    comp=6, lifetime=0.089157
+    comp=1, lifetime=0.066770
+    comp=5, lifetime=0.057229
+    comp=2, lifetime=0.030870
+    comp=4, lifetime=0.023907
+    comp=5, lifetime=0.023252
+    comp=6, lifetime=0.019804
+    comp=8, lifetime=0.017025
+    comp=9, lifetime=0.016784
+    comp=2, lifetime=0.000002
+    comp=7, lifetime=0.000001
+    comp=7, lifetime=0.000000
+    comp=7, lifetime=0.000000
+    comp=6, lifetime=0.000000
+    comp=8, lifetime=0.000000
+[INFO] Cleaning backend directory...
+
+========== run_03 ==========
+[INFO] Started Hydra pid=2172631
+[INFO] Started bag play pid=2172768
+[INFO] Bag play finished rc=0
+[INFO] Stopping Hydra...
+[INFO] Running evaluation...
+Evaluation done.
+  trajectory_rows: 620
+  ape_rmse: 3.5e-05
+  rpe_rmse: 5.1e-05
+  rooms_final: 7
+Run summary:
+  trajectory_rows: 620
+  ape_rmse: 3.5e-05
+  ape_mean: 3.1e-05
+  rpe_rmse: 5.1e-05
+  rpe_mean: 4.3e-05
+  layer_2_final_nodes_active: 107
+  layer_3_final_nodes_active: 1169
+  layer_4_final_nodes_active: 7
+  layer_5_final_nodes_active: 1
+  rooms_final: 7
+  layer_names: {'2': 'Objects', '3': 'Places', '4': 'Rooms', '5': 'Buildings'}
+[PLATEAU] Summary:
+  selected_components: 8
+  threshold: 0.023276
+  max_lifetime: 0.155177
+  ranked lifetimes:
+    comp=4, lifetime=0.155177
+    comp=3, lifetime=0.136676
+    comp=2, lifetime=0.097641
+    comp=6, lifetime=0.053468
+    comp=8, lifetime=0.037802
+    comp=6, lifetime=0.033809
+    comp=5, lifetime=0.020204
+    comp=6, lifetime=0.019804
+    comp=7, lifetime=0.019427
+    comp=7, lifetime=0.018412
+    comp=7, lifetime=0.017277
+[INFO] Cleaning backend directory...
+
+========== run_04 ==========
+[INFO] Started Hydra pid=2279969
+[INFO] Started bag play pid=2280106
+[INFO] Bag play finished rc=0
+[INFO] Stopping Hydra...
+[INFO] Running evaluation...
+Evaluation done.
+  trajectory_rows: 613
+  ape_rmse: 3.6e-05
+  rpe_rmse: 4.9e-05
+  rooms_final: 6
+Run summary:
+  trajectory_rows: 613
+  ape_rmse: 3.6e-05
+  ape_mean: 3.2e-05
+  rpe_rmse: 4.9e-05
+  rpe_mean: 4.2e-05
+  layer_2_final_nodes_active: 111
+  layer_3_final_nodes_active: 1156
+  layer_4_final_nodes_active: 6
+  layer_5_final_nodes_active: 1
+  rooms_final: 6
+  layer_names: {'2': 'Objects', '3': 'Places', '4': 'Rooms', '5': 'Buildings'}
+[PLATEAU] Summary:
+  selected_components: 6
+  threshold: 0.041833
+  max_lifetime: 0.278890
+  ranked lifetimes:
+    comp=3, lifetime=0.278890
+    comp=5, lifetime=0.109682
+    comp=3, lifetime=0.092822
+    comp=6, lifetime=0.051086
+    comp=2, lifetime=0.034315
+    comp=2, lifetime=0.028289
+    comp=4, lifetime=0.019803
+    comp=4, lifetime=0.019427
+    comp=4, lifetime=0.000000
+    comp=5, lifetime=0.000000
+    comp=3, lifetime=0.000000
+[INFO] Cleaning backend directory...
+
+========== run_05 ==========
+[INFO] Started Hydra pid=2380517
+[INFO] Started bag play pid=2380655
+[INFO] Bag play finished rc=0
+[INFO] Stopping Hydra...
+[INFO] Running evaluation...
+Evaluation done.
+  trajectory_rows: 604
+  ape_rmse: 3.5e-05
+  rpe_rmse: 4.4e-05
+  rooms_final: 7
+Run summary:
+  trajectory_rows: 604
+  ape_rmse: 3.5e-05
+  ape_mean: 3.1e-05
+  rpe_rmse: 4.4e-05
+  rpe_mean: 3.6e-05
+  layer_2_final_nodes_active: 113
+  layer_3_final_nodes_active: 1147
+  layer_4_final_nodes_active: 7
+  layer_5_final_nodes_active: 1
+  rooms_final: 7
+  layer_names: {'2': 'Objects', '3': 'Places', '4': 'Rooms', '5': 'Buildings'}
+[PLATEAU] Summary:
+  selected_components: 7
+  threshold: 0.023314
+  max_lifetime: 0.155425
+  ranked lifetimes:
+    comp=3, lifetime=0.155425
+    comp=3, lifetime=0.138083
+    comp=2, lifetime=0.078890
+    comp=6, lifetime=0.075641
+    comp=7, lifetime=0.070746
+    comp=4, lifetime=0.061917
+    comp=6, lifetime=0.033809
+    comp=7, lifetime=0.019804
+    comp=2, lifetime=0.000002
+    comp=5, lifetime=0.000000
+    comp=6, lifetime=0.000000
+    comp=7, lifetime=0.000000
+    comp=6, lifetime=0.000000
+
+
+========== run_06 ==========
+[INFO] Started Hydra pid=2483591
+[INFO] Started bag play pid=2483728
+[INFO] Bag play finished rc=0
+[INFO] Stopping Hydra...
+[INFO] Running evaluation...
+Evaluation done.
+  trajectory_rows: 610
+  ape_rmse: 3.5e-05
+  rpe_rmse: 5e-05
+  rooms_final: 11
+Run summary:
+  trajectory_rows: 610
+  ape_rmse: 3.5e-05
+  ape_mean: 3.1e-05
+  rpe_rmse: 5e-05
+  rpe_mean: 4.4e-05
+  layer_2_final_nodes_active: 106
+  layer_3_final_nodes_active: 1198
+  layer_4_final_nodes_active: 11
+  layer_5_final_nodes_active: 1
+  rooms_final: 11
+  layer_names: {'2': 'Objects', '3': 'Places', '4': 'Rooms', '5': 'Buildings'}
+[PLATEAU] Summary:
+  selected_components: 11
+  threshold: 0.022337
+  max_lifetime: 0.148912
+  ranked lifetimes:
+    comp=9, lifetime=0.148912
+    comp=5, lifetime=0.094427
+    comp=3, lifetime=0.088655
+    comp=9, lifetime=0.083485
+    comp=4, lifetime=0.078889
+    comp=11, lifetime=0.051087
+    comp=1, lifetime=0.034316
+    comp=2, lifetime=0.032456
+    comp=8, lifetime=0.022088
+    comp=6, lifetime=0.000000
+    comp=10, lifetime=0.000000
+    comp=8, lifetime=0.000000
+    comp=7, lifetime=0.000000
+    comp=10, lifetime=0.000000
+[INFO] Cleaning backend directory...
+
+========== run_07 ==========
+[INFO] Started Hydra pid=2597486
+[INFO] Started bag play pid=2597626
+[INFO] Bag play finished rc=0
+[INFO] Stopping Hydra...
+[INFO] Running evaluation...
+Evaluation done.
+  trajectory_rows: 604
+  ape_rmse: 3.5e-05
+  rpe_rmse: 4.7e-05
+  rooms_final: 9
+Run summary:
+  trajectory_rows: 604
+  ape_rmse: 3.5e-05
+  ape_mean: 3e-05
+  rpe_rmse: 4.7e-05
+  rpe_mean: 4e-05
+  layer_2_final_nodes_active: 115
+  layer_3_final_nodes_active: 1146
+  layer_4_final_nodes_active: 9
+  layer_5_final_nodes_active: 1
+  rooms_final: 9
+  layer_names: {'2': 'Objects', '3': 'Places', '4': 'Rooms', '5': 'Buildings'}
+[PLATEAU] Summary:
+  selected_components: 7
+  threshold: 0.023276
+  max_lifetime: 0.155174
+  ranked lifetimes:
+    comp=5, lifetime=0.155174
+    comp=1, lifetime=0.088654
+    comp=6, lifetime=0.077033
+    comp=3, lifetime=0.076289
+    comp=2, lifetime=0.066772
+    comp=7, lifetime=0.035926
+    comp=7, lifetime=0.034304
+    comp=2, lifetime=0.027222
+    comp=6, lifetime=0.020204
+    comp=8, lifetime=0.017541
+    comp=6, lifetime=0.016783
+    comp=6, lifetime=0.000002
+    comp=4, lifetime=0.000001
+    comp=7, lifetime=0.000000
+    comp=7, lifetime=0.000000
+[INFO] Cleaning backend directory...
+
+========== run_08 ==========
+[INFO] Started Hydra pid=2704156
+[INFO] Started bag play pid=2704297
+[INFO] Bag play finished rc=0
+[INFO] Stopping Hydra...
+[INFO] Running evaluation...
+Evaluation done.
+  trajectory_rows: 616
+  ape_rmse: 3.5e-05
+  rpe_rmse: 5.1e-05
+  rooms_final: 5
+Run summary:
+  trajectory_rows: 616
+  ape_rmse: 3.5e-05
+  ape_mean: 3.1e-05
+  rpe_rmse: 5.1e-05
+  rpe_mean: 4.3e-05
+  layer_2_final_nodes_active: 111
+  layer_3_final_nodes_active: 1197
+  layer_4_final_nodes_active: 5
+  layer_5_final_nodes_active: 1
+  rooms_final: 5
+  layer_names: {'2': 'Objects', '3': 'Places', '4': 'Rooms', '5': 'Buildings'}
+[PLATEAU] Summary:
+  selected_components: 5
+  threshold: 0.033693
+  max_lifetime: 0.224621
+  ranked lifetimes:
+    comp=2, lifetime=0.224621
+    comp=4, lifetime=0.148024
+    comp=5, lifetime=0.129109
+    comp=3, lifetime=0.047158
+    comp=2, lifetime=0.034316
+    comp=5, lifetime=0.033810
+    comp=4, lifetime=0.017277
+    comp=3, lifetime=0.000000
+[INFO] Cleaning backend directory...
+
+========== run_09 ==========
+[INFO] Started Hydra pid=2816344
+[INFO] Started bag play pid=2816482
+[INFO] Bag play finished rc=0
+[INFO] Stopping Hydra...
+[INFO] Running evaluation...
+Evaluation done.
+  trajectory_rows: 613
+  ape_rmse: 3.5e-05
+  rpe_rmse: 5.2e-05
+  rooms_final: 8
+Run summary:
+  trajectory_rows: 613
+  ape_rmse: 3.5e-05
+  ape_mean: 3.1e-05
+  rpe_rmse: 5.2e-05
+  rpe_mean: 4.4e-05
+  layer_2_final_nodes_active: 110
+  layer_3_final_nodes_active: 1125
+  layer_4_final_nodes_active: 8
+  layer_5_final_nodes_active: 1
+  rooms_final: 8
+  layer_names: {'2': 'Objects', '3': 'Places', '4': 'Rooms', '5': 'Buildings'}
+[PLATEAU] Summary:
+  selected_components: 8
+  threshold: 0.018445
+  max_lifetime: 0.122966
+  ranked lifetimes:
+    comp=8, lifetime=0.122966
+    comp=3, lifetime=0.121110
+    comp=3, lifetime=0.103511
+    comp=5, lifetime=0.085368
+    comp=4, lifetime=0.069806
+    comp=7, lifetime=0.057229
+    comp=2, lifetime=0.034316
+    comp=6, lifetime=0.020204
+    comp=8, lifetime=0.019804
+    comp=7, lifetime=0.000001
+    comp=2, lifetime=0.000000
+    comp=9, lifetime=0.000000
+    comp=7, lifetime=0.000000
+    comp=8, lifetime=0.000000
+[INFO] Cleaning backend directory...
+
+========== run_10 ==========
+[INFO] Started Hydra pid=926992
+[INFO] Started bag play pid=927130
+[INFO] Bag play finished rc=0
+[INFO] Stopping Hydra...
+[INFO] Running evaluation...
+Evaluation done.
+  trajectory_rows: 613
+  ape_rmse: 3.6e-05
+  rpe_rmse: 5.3e-05
+  rooms_final: 7
+Run summary:
+  trajectory_rows: 613
+  ape_rmse: 3.6e-05
+  ape_mean: 3.1e-05
+  rpe_rmse: 5.3e-05
+  rpe_mean: 4.5e-05
+  layer_2_final_nodes_active: 111
+  layer_3_final_nodes_active: 1166
+  layer_4_final_nodes_active: 7
+  layer_5_final_nodes_active: 1
+  rooms_final: 7
+  layer_names: {'2': 'Objects', '3': 'Places', '4': 'Rooms', '5': 'Buildings'}
+[PLATEAU] Summary:
+  selected_components: 7
+  threshold: 0.023314
+  max_lifetime: 0.155427
+  ranked lifetimes:
+    comp=1, lifetime=0.155427
+    comp=7, lifetime=0.146387
+    comp=2, lifetime=0.103512
+    comp=3, lifetime=0.091894
+    comp=4, lifetime=0.083483
+    comp=8, lifetime=0.017025
+    comp=7, lifetime=0.016784
+    comp=7, lifetime=0.000003
+    comp=8, lifetime=0.000000
+    comp=9, lifetime=0.000000
+    comp=8, lifetime=0.000000
+    comp=7, lifetime=0.000000
+    comp=5, lifetime=0.000000
+    comp=6, lifetime=0.000000
+    comp=8, lifetime=0.000000
+[INFO] Cleaning backend directory...
+
+========== run_11 ==========
+[INFO] Started Hydra pid=822934
+[INFO] Started bag play pid=823071
+[INFO] Bag play finished rc=0
+[INFO] Stopping Hydra...
+[INFO] Running evaluation...
+Evaluation done.
+  trajectory_rows: 602
+  ape_rmse: 3.5e-05
+  rpe_rmse: 5e-05
+  rooms_final: 8
+Run summary:
+  trajectory_rows: 602
+  ape_rmse: 3.5e-05
+  ape_mean: 3.1e-05
+  rpe_rmse: 5e-05
+  rpe_mean: 4.2e-05
+  layer_2_final_nodes_active: 109
+  layer_3_final_nodes_active: 1139
+  layer_4_final_nodes_active: 8
+  layer_5_final_nodes_active: 1
+  rooms_final: 8
+  layer_names: {'2': 'Objects', '3': 'Places', '4': 'Rooms', '5': 'Buildings'}
+[PLATEAU] Summary:
+  selected_components: 8
+  threshold: 0.025227
+  max_lifetime: 0.168183
+  ranked lifetimes:
+    comp=4, lifetime=0.168183
+    comp=8, lifetime=0.077033
+    comp=7, lifetime=0.068629
+    comp=2, lifetime=0.066772
+    comp=7, lifetime=0.063280
+    comp=2, lifetime=0.057785
+    comp=6, lifetime=0.054337
+    comp=3, lifetime=0.030870
+    comp=3, lifetime=0.027222
+    comp=6, lifetime=0.020203
+    comp=7, lifetime=0.000001
+    comp=6, lifetime=0.000000
+    comp=8, lifetime=0.000000
+    comp=5, lifetime=0.000000
+    comp=7, lifetime=0.000000
+    comp=7, lifetime=0.000000
+[INFO] Cleaning backend directory...
+
+========== run_12 ==========
+[INFO] Started Hydra pid=714119
+[INFO] Started bag play pid=714257
+[INFO] Bag play finished rc=0
+[INFO] Stopping Hydra...
+[INFO] Running evaluation...
+Evaluation done.
+  trajectory_rows: 608
+  ape_rmse: 3.6e-05
+  rpe_rmse: 5e-05
+  rooms_final: 7
+Run summary:
+  trajectory_rows: 608
+  ape_rmse: 3.6e-05
+  ape_mean: 3.1e-05
+  rpe_rmse: 5e-05
+  rpe_mean: 4.1e-05
+  layer_2_final_nodes_active: 110
+  layer_3_final_nodes_active: 1142
+  layer_4_final_nodes_active: 7
+  layer_5_final_nodes_active: 1
+  rooms_final: 7
+  layer_names: {'2': 'Objects', '3': 'Places', '4': 'Rooms', '5': 'Buildings'}
+[PLATEAU] Summary:
+  selected_components: 7
+  threshold: 0.026969
+  max_lifetime: 0.179795
+  ranked lifetimes:
+    comp=4, lifetime=0.179795
+    comp=7, lifetime=0.148913
+    comp=1, lifetime=0.097642
+    comp=3, lifetime=0.078890
+    comp=2, lifetime=0.057785
+    comp=7, lifetime=0.051086
+    comp=5, lifetime=0.020205
+    comp=6, lifetime=0.000000
+    comp=6, lifetime=0.000000
+[INFO] Cleaning backend directory...
+
+========== run_13 ==========
+[INFO] Started Hydra pid=602417
+[INFO] Started bag play pid=602555
+[INFO] Bag play finished rc=0
+[INFO] Stopping Hydra...
+[INFO] Running evaluation...
+Evaluation done.
+  trajectory_rows: 615
+  ape_rmse: 3.6e-05
+  rpe_rmse: 4.9e-05
+  rooms_final: 6
+Run summary:
+  trajectory_rows: 615
+  ape_rmse: 3.6e-05
+  ape_mean: 3.1e-05
+  rpe_rmse: 4.9e-05
+  rpe_mean: 4.3e-05
+  layer_2_final_nodes_active: 112
+  layer_3_final_nodes_active: 1177
+  layer_4_final_nodes_active: 6
+  layer_5_final_nodes_active: 1
+  rooms_final: 6
+  layer_names: {'2': 'Objects', '3': 'Places', '4': 'Rooms', '5': 'Buildings'}
+[PLATEAU] Summary:
+  selected_components: 8
+  threshold: 0.025132
+  max_lifetime: 0.167544
+  ranked lifetimes:
+    comp=2, lifetime=0.167544
+    comp=6, lifetime=0.105573
+    comp=4, lifetime=0.094427
+    comp=6, lifetime=0.089157
+    comp=8, lifetime=0.057229
+    comp=3, lifetime=0.034313
+    comp=6, lifetime=0.033809
+    comp=3, lifetime=0.032456
+    comp=7, lifetime=0.019804
+    comp=2, lifetime=0.000002
+    comp=2, lifetime=0.000001
+    comp=7, lifetime=0.000001
+    comp=7, lifetime=0.000000
+    comp=3, lifetime=0.000000
+    comp=5, lifetime=0.000000
+[INFO] Cleaning backend directory...
+
+========== run_14 ==========
+[INFO] Started Hydra pid=1148951
+[INFO] Started bag play pid=1149088
+[INFO] Bag play finished rc=0
+[INFO] Stopping Hydra...
+[INFO] Running evaluation...
+Evaluation done.
+  trajectory_rows: 619
+  ape_rmse: 3.5e-05
+  rpe_rmse: 4.8e-05
+  rooms_final: 9
+Run summary:
+  trajectory_rows: 619
+  ape_rmse: 3.5e-05
+  ape_mean: 3.1e-05
+  rpe_rmse: 4.8e-05
+  rpe_mean: 4e-05
+  layer_2_final_nodes_active: 116
+  layer_3_final_nodes_active: 1172
+  layer_4_final_nodes_active: 9
+  layer_5_final_nodes_active: 1
+  rooms_final: 9
+  layer_names: {'2': 'Objects', '3': 'Places', '4': 'Rooms', '5': 'Buildings'}
+[PLATEAU] Summary:
+  selected_components: 8
+  threshold: 0.018166
+  max_lifetime: 0.121110
+  ranked lifetimes:
+    comp=1, lifetime=0.121110
+    comp=6, lifetime=0.104554
+    comp=3, lifetime=0.078889
+    comp=7, lifetime=0.075641
+    comp=5, lifetime=0.069806
+    comp=6, lifetime=0.061916
+    comp=2, lifetime=0.034316
+    comp=4, lifetime=0.024621
+    comp=6, lifetime=0.022088
+    comp=7, lifetime=0.021569
+    comp=8, lifetime=0.019803
+    comp=9, lifetime=0.000001
+    comp=2, lifetime=0.000000
+    comp=7, lifetime=0.000000
+    comp=8, lifetime=0.000000
+[INFO] Cleaning backend directory...
+
+========== run_15 ==========
+[INFO] Started Hydra pid=1036564
+[INFO] Started bag play pid=1036701
+[INFO] Bag play finished rc=0
+[INFO] Stopping Hydra...
+[INFO] Running evaluation...
+Evaluation done.
+  trajectory_rows: 613
+  ape_rmse: 3.5e-05
+  rpe_rmse: 5.1e-05
+  rooms_final: 7
+Run summary:
+  trajectory_rows: 613
+  ape_rmse: 3.5e-05
+  ape_mean: 3.1e-05
+  rpe_rmse: 5.1e-05
+  rpe_mean: 4.2e-05
+  layer_2_final_nodes_active: 113
+  layer_3_final_nodes_active: 1174
+  layer_4_final_nodes_active: 7
+  layer_5_final_nodes_active: 1
+  rooms_final: 7
+  layer_names: {'2': 'Objects', '3': 'Places', '4': 'Rooms', '5': 'Buildings'}
+[PLATEAU] Summary:
+  selected_components: 9
+  threshold: 0.028825
+  max_lifetime: 0.192165
+  ranked lifetimes:
+    comp=4, lifetime=0.192165
+    comp=8, lifetime=0.077033
+    comp=9, lifetime=0.071879
+    comp=4, lifetime=0.069806
+    comp=8, lifetime=0.051087
+    comp=5, lifetime=0.043657
+    comp=4, lifetime=0.041711
+    comp=2, lifetime=0.034316
+    comp=3, lifetime=0.032456
+    comp=5, lifetime=0.020205
+    comp=5, lifetime=0.000000
+    comp=6, lifetime=0.000000
+    comp=7, lifetime=0.000000
+[INFO] Cleaning backend directory...
+
+========== run_16 ==========
+[INFO] Started Hydra pid=1263752
+[INFO] Started bag play pid=1263890
+[INFO] Bag play finished rc=0
+[INFO] Stopping Hydra...
+[INFO] Running evaluation...
+Evaluation done.
+  trajectory_rows: 607
+  ape_rmse: 3.5e-05
+  rpe_rmse: 4.6e-05
+  rooms_final: 8
+Run summary:
+  trajectory_rows: 607
+  ape_rmse: 3.5e-05
+  ape_mean: 3e-05
+  rpe_rmse: 4.6e-05
+  rpe_mean: 4e-05
+  layer_2_final_nodes_active: 114
+  layer_3_final_nodes_active: 1141
+  layer_4_final_nodes_active: 8
+  layer_5_final_nodes_active: 1
+  rooms_final: 8
+  layer_names: {'2': 'Objects', '3': 'Places', '4': 'Rooms', '5': 'Buildings'}
+[PLATEAU] Summary:
+  selected_components: 8
+  threshold: 0.030000
+  max_lifetime: 0.200000
+  ranked lifetimes:
+    comp=3, lifetime=0.200000
+    comp=6, lifetime=0.089156
+    comp=4, lifetime=0.085369
+    comp=8, lifetime=0.077033
+    comp=5, lifetime=0.069806
+    comp=2, lifetime=0.034317
+    comp=5, lifetime=0.033809
+    comp=5, lifetime=0.020204
+    comp=4, lifetime=0.000002
+    comp=7, lifetime=0.000001
+    comp=7, lifetime=0.000000
+    comp=6, lifetime=0.000000
+[INFO] Cleaning backend directory...
+
+========== run_17 ==========
+[INFO] Started Hydra pid=1371493
+[INFO] Started bag play pid=1371630
+[INFO] Bag play finished rc=0
+[INFO] Stopping Hydra...
+[INFO] Running evaluation...
+Evaluation done.
+  trajectory_rows: 624
+  ape_rmse: 3.4e-05
+  rpe_rmse: 4.5e-05
+  rooms_final: 8
+Run summary:
+  trajectory_rows: 624
+  ape_rmse: 3.4e-05
+  ape_mean: 3e-05
+  rpe_rmse: 4.5e-05
+  rpe_mean: 3.8e-05
+  layer_2_final_nodes_active: 115
+  layer_3_final_nodes_active: 1176
+  layer_4_final_nodes_active: 8
+  layer_5_final_nodes_active: 1
+  rooms_final: 8
+  layer_names: {'2': 'Objects', '3': 'Places', '4': 'Rooms', '5': 'Buildings'}
+[PLATEAU] Summary:
+  selected_components: 8
+  threshold: 0.025132
+  max_lifetime: 0.167545
+  ranked lifetimes:
+    comp=2, lifetime=0.167545
+    comp=5, lifetime=0.105572
+    comp=8, lifetime=0.054338
+    comp=3, lifetime=0.048528
+    comp=4, lifetime=0.045899
+    comp=7, lifetime=0.037802
+    comp=7, lifetime=0.034819
+    comp=2, lifetime=0.034316
+    comp=6, lifetime=0.033809
+    comp=1, lifetime=0.032456
+    comp=5, lifetime=0.019804
+    comp=6, lifetime=0.019427
+    comp=4, lifetime=0.000001
+    comp=7, lifetime=0.000000
+[INFO] Cleaning backend directory...
+
+========== run_18 ==========
+[INFO] Started Hydra pid=2030452
+[INFO] Started bag play pid=2030589
+[INFO] Bag play finished rc=0
+[INFO] Stopping Hydra...
+[INFO] Running evaluation...
+Evaluation done.
+  trajectory_rows: 621
+  ape_rmse: 3.6e-05
+  rpe_rmse: 4.8e-05
+  rooms_final: 9
+Run summary:
+  trajectory_rows: 621
+  ape_rmse: 3.6e-05
+  ape_mean: 3.2e-05
+  rpe_rmse: 4.8e-05
+  rpe_mean: 4e-05
+  layer_2_final_nodes_active: 113
+  layer_3_final_nodes_active: 1146
+  layer_4_final_nodes_active: 9
+  layer_5_final_nodes_active: 1
+  rooms_final: 9
+  layer_names: {'2': 'Objects', '3': 'Places', '4': 'Rooms', '5': 'Buildings'}
+[PLATEAU] Summary:
+  selected_components: 10
+  threshold: 0.035147
+  max_lifetime: 0.234316
+  ranked lifetimes:
+    comp=2, lifetime=0.234316
+    comp=10, lifetime=0.092140
+    comp=5, lifetime=0.089554
+    comp=6, lifetime=0.061917
+    comp=9, lifetime=0.039231
+    comp=9, lifetime=0.034820
+    comp=7, lifetime=0.033808
+    comp=3, lifetime=0.024621
+    comp=4, lifetime=0.023907
+    comp=7, lifetime=0.000000
+    comp=8, lifetime=0.000000
+    comp=8, lifetime=0.000000
+[INFO] Cleaning backend directory...
+
+========== run_19 ==========
+[INFO] Started Hydra pid=1921575
+[INFO] Started bag play pid=1921712
+[INFO] Bag play finished rc=0
+[INFO] Stopping Hydra...
+[INFO] Running evaluation...
+Evaluation done.
+  trajectory_rows: 615
+  ape_rmse: 3.5e-05
+  rpe_rmse: 4.8e-05
+  rooms_final: 6
+Run summary:
+  trajectory_rows: 615
+  ape_rmse: 3.5e-05
+  ape_mean: 3.1e-05
+  rpe_rmse: 4.8e-05
+  rpe_mean: 4e-05
+  layer_2_final_nodes_active: 110
+  layer_3_final_nodes_active: 1151
+  layer_4_final_nodes_active: 6
+  layer_5_final_nodes_active: 1
+  rooms_final: 6
+  layer_names: {'2': 'Objects', '3': 'Places', '4': 'Rooms', '5': 'Buildings'}
+[PLATEAU] Summary:
+  selected_components: 6
+  threshold: 0.037279
+  max_lifetime: 0.248527
+  ranked lifetimes:
+    comp=3, lifetime=0.248527
+    comp=6, lifetime=0.143986
+    comp=6, lifetime=0.105573
+    comp=4, lifetime=0.045899
+    comp=6, lifetime=0.039230
+    comp=1, lifetime=0.034316
+    comp=5, lifetime=0.016784
+    comp=5, lifetime=0.000001
+    comp=2, lifetime=0.000000
+    comp=5, lifetime=0.000000
+    comp=5, lifetime=0.000000
+    comp=5, lifetime=0.000000
+    comp=4, lifetime=0.000000
+[INFO] Cleaning backend directory...
+
+========== run_20 ==========
+[INFO] Started Hydra pid=1812545
+[INFO] Started bag play pid=1812682
+[INFO] Bag play finished rc=0
+[INFO] Stopping Hydra...
+[INFO] Running evaluation...
+Evaluation done.
+  trajectory_rows: 605
+  ape_rmse: 3.6e-05
+  rpe_rmse: 4.8e-05
+  rooms_final: 8
+Run summary:
+  trajectory_rows: 605
+  ape_rmse: 3.6e-05
+  ape_mean: 3.1e-05
+  rpe_rmse: 4.8e-05
+  rpe_mean: 4e-05
+  layer_2_final_nodes_active: 116
+  layer_3_final_nodes_active: 1144
+  layer_4_final_nodes_active: 8
+  layer_5_final_nodes_active: 1
+  rooms_final: 8
+  layer_names: {'2': 'Objects', '3': 'Places', '4': 'Rooms', '5': 'Buildings'}
+[PLATEAU] Summary:
+  selected_components: 7
+  threshold: 0.025998
+  max_lifetime: 0.173318
+  ranked lifetimes:
+    comp=4, lifetime=0.173318
+    comp=2, lifetime=0.088654
+    comp=6, lifetime=0.071879
+    comp=3, lifetime=0.066770
+    comp=6, lifetime=0.061917
+    comp=7, lifetime=0.051088
+    comp=5, lifetime=0.043655
+    comp=7, lifetime=0.039230
+    comp=6, lifetime=0.037803
+    comp=2, lifetime=0.000002
+    comp=3, lifetime=0.000000
+    comp=7, lifetime=0.000000
+    comp=8, lifetime=0.000000
+[INFO] Cleaning backend directory...
+
+========== run_21 ==========
+[INFO] Started Hydra pid=2361510
+[INFO] Started bag play pid=2361648
+[INFO] Bag play finished rc=0
+[INFO] Stopping Hydra...
+[INFO] Running evaluation...
+Evaluation done.
+  trajectory_rows: 610
+  ape_rmse: 3.5e-05
+  rpe_rmse: 4.6e-05
+  rooms_final: 8
+Run summary:
+  trajectory_rows: 610
+  ape_rmse: 3.5e-05
+  ape_mean: 3.1e-05
+  rpe_rmse: 4.6e-05
+  rpe_mean: 3.9e-05
+  layer_2_final_nodes_active: 112
+  layer_3_final_nodes_active: 1104
+  layer_4_final_nodes_active: 8
+  layer_5_final_nodes_active: 1
+  rooms_final: 8
+  layer_names: {'2': 'Objects', '3': 'Places', '4': 'Rooms', '5': 'Buildings'}
+[PLATEAU] Summary:
+  selected_components: 8
+  threshold: 0.022721
+  max_lifetime: 0.151471
+  ranked lifetimes:
+    comp=4, lifetime=0.151471
+    comp=1, lifetime=0.136677
+    comp=2, lifetime=0.097640
+    comp=8, lifetime=0.071878
+    comp=7, lifetime=0.057229
+    comp=7, lifetime=0.033809
+    comp=2, lifetime=0.024620
+    comp=3, lifetime=0.023908
+    comp=6, lifetime=0.019803
+    comp=7, lifetime=0.017277
+    comp=9, lifetime=0.000001
+    comp=5, lifetime=0.000000
+    comp=8, lifetime=0.000000
+    comp=8, lifetime=0.000000
+[INFO] Cleaning backend directory...
+
+
+
